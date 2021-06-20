@@ -1,0 +1,27 @@
+#For local development, make sure nothing is running on your local dev machine/vm on ports 8080 and 27017
+version: '3'
+services:
+  appdb:
+    image: mongo:4.0.6
+    # network_mode: host
+    ports: 
+      - "27017:27017"
+    logging:
+      driver: none
+
+  backupdb:
+    image: mongo:4.0.6
+    # network_mode: host
+    ports: 
+      - "27018:27017"
+    logging:
+      driver: none
+
+  opsmanager:
+    image: new-try
+    # network_mode: host
+    ports:
+      - "8080:8080"
+    depends_on: 
+      - appdb
+      - backupdb
