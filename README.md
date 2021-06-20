@@ -2,10 +2,11 @@
 
 ### Simply run
 
+
 ```
 docker-compose up -d
 ```
 
 ### Read here
 
-https://github.com/KANE-99/ops-manager/tree/main
+https://docs.opsmanager.mongodb.com/current/core/system-overview/
